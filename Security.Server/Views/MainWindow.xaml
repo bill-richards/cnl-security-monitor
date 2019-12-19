@@ -1,0 +1,24 @@
+﻿<Window x:Class="Security.Server.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" MinHeight="500" MaxHeight="500" MaxWidth="700" MinWidth="700">
+   <i:Interaction.Triggers>
+      <i:EventTrigger EventName="Closing">
+         <i:InvokeCommandAction Command="{Binding ApplicationClosing}" />
+      </i:EventTrigger>
+   </i:Interaction.Triggers>
+   <DockPanel LastChildFill="True" HorizontalAlignment="Stretch">
+      <Grid DockPanel.Dock="Top">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+         </Grid.ColumnDefinitions>
+         <ContentControl Grid.Column="0" prism:RegionManager.RegionName="ReaderRegion" />
+         <ContentControl Grid.Column="1" prism:RegionManager.RegionName="CreateRegion" />
+      </Grid>
+      <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="DoorsRegion" />
+    </DockPanel>
+</Window>
