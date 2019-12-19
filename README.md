@@ -65,6 +65,12 @@ The database only contains two tables, one for the registered door data (id, lab
 
 ---
 
+## Take note
+
+You may notice that when you close down the Server application the process remains running for a short while after the window has closed, this is due to closing of the RabbitMQ channels and connections. I believe it is due to the queue running in a docker container on the local machine.
+
+---
+
 ## When you have finished running the solution
 
 If you want to remove the containers and images from your Docker server run the *teardown* PowerShell script
