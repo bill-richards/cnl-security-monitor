@@ -13,7 +13,7 @@ This solution requires `Docker Engine 1.8+` because it makes use of a Docker ima
 - Run the Powershell script to prepare the required containers
 
 ```PowerShell
-.\container-setup.ps1 'D:\container-persistance'
+.\container-setup.ps1 './container-persistance'
 ```
 
 The script will prepare the RabbitMQ container whose data will be persisted to the specified persistence directory on the host.
